@@ -2,481 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca217759-bf6d-46d6-92f9-dbc42e239ca8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/AbstractExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/AbstractRendererEngine.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/AbstractType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/AbstractTypeExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Button.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ButtonBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ButtonTypeInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/CHANGELOG.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/CallbackTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/ArrayChoiceList.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/ChoiceListInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Factory/CachingFactoryDecorator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Factory/ChoiceListFactoryInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Factory/DefaultChoiceListFactory.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Factory/PropertyAccessDecorator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/LazyChoiceList.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Loader/CallbackChoiceLoader.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/Loader/ChoiceLoaderInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/View/ChoiceGroupView.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/View/ChoiceListView.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ChoiceList/View/ChoiceView.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ClickableInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Command/DebugCommand.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Console/Descriptor/Descriptor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Console/Descriptor/JsonDescriptor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Console/Descriptor/TextDescriptor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Console/Helper/DescriptorHelper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/DataMapperInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/DataTransformerInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/DependencyInjection/FormPass.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/AlreadySubmittedException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/BadMethodCallException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/ErrorMappingException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/ExceptionInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/InvalidArgumentException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/InvalidConfigurationException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/LogicException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/OutOfBoundsException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/RuntimeException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/StringCastException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/TransformationFailedException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Exception/UnexpectedTypeException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/CoreExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataMapper/CheckboxListMapper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataMapper/PropertyPathMapper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataMapper/RadioListMapper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/ArrayToPartsTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/BaseDateTimeTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/BooleanToStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/ChoiceToValueTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/ChoicesToValuesTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DataTransformerChain.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateIntervalToArrayTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateIntervalToStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeToArrayTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeToLocalizedStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeToRfc3339Transformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeToStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeToTimestampTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/DateTimeZoneToStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/IntegerToLocalizedStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/MoneyToLocalizedStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/NumberToLocalizedStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/PercentToLocalizedStringTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/DataTransformer/ValueToDuplicatesTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/EventListener/FixUrlProtocolListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/EventListener/MergeCollectionListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/EventListener/ResizeFormListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/EventListener/TrimListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/BaseType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/BirthdayType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/ButtonType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/CheckboxType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/ChoiceType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/CollectionType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/ColorType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/CountryType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/CurrencyType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/DateIntervalType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/DateTimeType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/DateType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/EmailType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/FileType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/FormType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/HiddenType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/IntegerType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/LanguageType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/LocaleType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/MoneyType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/NumberType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/PasswordType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/PercentType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/RadioType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/RangeType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/RepeatedType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/ResetType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/SearchType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/SubmitType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/TelType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/TextType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/TextareaType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/TimeType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/TimezoneType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/UrlType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Csrf/CsrfExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Csrf/EventListener/CsrfValidationListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Csrf/Type/FormTypeCsrfExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/DataCollectorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/EventListener/DataCollectorListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/FormDataCollector.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/FormDataCollectorInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/FormDataExtractor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/FormDataExtractorInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/Proxy/ResolvedTypeDataCollectorProxy.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/Proxy/ResolvedTypeFactoryDataCollectorProxy.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DataCollector/Type/DataCollectorTypeExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/DependencyInjection/DependencyInjectionExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/HttpFoundation/HttpFoundationExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/HttpFoundation/HttpFoundationRequestHandler.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/HttpFoundation/Type/FormTypeHttpFoundationExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Templating/TemplatingExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Templating/TemplatingRendererEngine.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Constraints/Form.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Constraints/FormValidator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/EventListener/ValidationListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Type/BaseValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Type/FormTypeValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Type/RepeatedTypeValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Type/SubmitTypeValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Type/UploadValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/Util/ServerParams.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ValidatorExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ValidatorTypeGuesser.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/MappingRule.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/RelativePath.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/ViolationMapper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/ViolationMapperInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/ViolationPath.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Extension/Validator/ViolationMapper/ViolationPathIterator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Form.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormBuilderInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormConfigBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormConfigBuilderInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormConfigInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormError.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormErrorIterator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormEvent.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormEvents.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormExtensionInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormFactory.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormFactoryBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormFactoryBuilderInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormFactoryInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormRegistry.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormRegistryInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormRenderer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormRendererEngineInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormRendererInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormTypeExtensionInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormTypeGuesserChain.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormTypeGuesserInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormTypeInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/FormView.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Forms.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Guess/Guess.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Guess/TypeGuess.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Guess/ValueGuess.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/NativeRequestHandler.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/PreloadedExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/RequestHandlerInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ResolvedFormType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ResolvedFormTypeFactory.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ResolvedFormTypeFactoryInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ResolvedFormTypeInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/config/validation.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.ar.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.az.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.bg.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.ca.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.cs.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.da.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.de.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.el.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.en.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.es.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.et.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.eu.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.fa.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.fi.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.fr.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.gl.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.he.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.hr.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.hu.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.hy.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.id.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.it.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.ja.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.lb.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.lt.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.lv.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.mn.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.nl.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.no.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.pl.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.pt.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.ro.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.ru.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.sk.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.sl.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.sr_Cyrl.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.sr_Latn.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.sv.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.uk.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Resources/translations/validators.zh_CN.xlf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/ReversedTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/SubmitButton.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/SubmitButtonBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/SubmitButtonTypeInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/FormBuilderInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/FormIntegrationTestCase.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/FormInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/FormPerformanceTestCase.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/Traits/ValidatorExtensionTrait.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Test/TypeTestCase.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractBootstrap3HorizontalLayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractBootstrap3LayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractBootstrap4HorizontalLayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractBootstrap4LayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractDivLayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractFormTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractLayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractRequestHandlerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/AbstractTableLayoutTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ButtonBuilderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ButtonTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/CallbackTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/AbstractChoiceListTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/ArrayChoiceListTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/Factory/CachingFactoryDecoratorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/Factory/DefaultChoiceListFactoryTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/Factory/PropertyAccessDecoratorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/LazyChoiceListTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ChoiceList/Loader/CallbackChoiceLoaderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Command/DebugCommandTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/CompoundFormPerformanceTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/CompoundFormTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Console/Descriptor/AbstractDescriptorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Console/Descriptor/JsonDescriptorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Console/Descriptor/TextDescriptorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/DependencyInjection/FormPassTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataMapper/PropertyPathMapperTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/ArrayToPartsTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/BaseDateTimeTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/BooleanToStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/ChoiceToValueTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/ChoicesToValuesTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DataTransformerChainTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateIntervalTestCase.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateIntervalToArrayTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateIntervalToStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeTestCase.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeToArrayTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeToLocalizedStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeToRfc3339TransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeToStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeToTimestampTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/DateTimeZoneToStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/IntegerToLocalizedStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/MoneyToLocalizedStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/NumberToLocalizedStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/PercentToLocalizedStringTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/DataTransformer/ValueToDuplicatesTransformerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/FixUrlProtocolListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/Fixtures/randomhash" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/MergeCollectionListenerArrayObjectTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/MergeCollectionListenerArrayTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/MergeCollectionListenerCustomArrayObjectTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/MergeCollectionListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/ResizeFormListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/EventListener/TrimListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/BaseTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/BirthdayTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/ButtonTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/CheckboxTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/ChoiceTypePerformanceTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/ChoiceTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/CollectionTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/CountryTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/CurrencyTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/DateIntervalTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/DateTimeTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/DateTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/ExtendedChoiceTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/FileTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/FormTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/IntegerTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/LanguageTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/LocaleTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/MoneyTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/NumberTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/PasswordTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/RepeatedTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/SubmitTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/TextTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/TimeTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/TimezoneTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Core/Type/UrlTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Csrf/EventListener/CsrfValidationListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Csrf/Type/FormTypeCsrfExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/DataCollector/DataCollectorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/DataCollector/FormDataCollectorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/DataCollector/FormDataExtractorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/DataCollector/Type/DataCollectorTypeExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/DependencyInjection/DependencyInjectionExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/HttpFoundation/HttpFoundationRequestHandlerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Constraints/FormValidatorPerformanceTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Constraints/FormValidatorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/EventListener/ValidationListenerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Type/BaseValidatorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Type/FormTypeValidatorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Type/SubmitTypeValidatorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Type/UploadValidatorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/Util/ServerParamsTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/ValidatorExtensionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/ValidatorTypeGuesserTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/ViolationMapper/ViolationMapperTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Extension/Validator/ViolationMapper/ViolationPathTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/AbstractAuthor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/AlternatingRowType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Author.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/AuthorInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/AuthorType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/ChoiceSubType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/ChoiceTypeExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/CustomArrayObject.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Debug/A/AmbiguousType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Debug/B/AmbiguousType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/default_option_with_normalizer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/default_option_with_normalizer.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/defaults_1.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/defaults_1.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/overridden_option_with_default_closures.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/overridden_option_with_default_closures.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/required_option_with_allowed_values.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/required_option_with_allowed_values.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/resolved_form_type_1.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Descriptor/resolved_form_type_1.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FBooType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FixedDataTransformer.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FixedFilterListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Foo.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Foo1Bar2Type.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FooBarHTMLType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FooSubType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FooType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FooTypeBarExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FooTypeBazExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/FormWithSameParentType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/LazyChoiceTypeExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/RecursiveFormTypeBar.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/RecursiveFormTypeBaz.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/RecursiveFormTypeFoo.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/TestExtension.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/Type.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/foo" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/foo2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Fixtures/foo3" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormBuilderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormConfigTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormErrorIteratorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormFactoryBuilderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormFactoryTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormRegistryTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/FormRendererTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Guess/GuessTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/NativeRequestHandlerTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/ResolvedFormTypeTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Resources/TranslationFilesTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/SimpleFormTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Util/OrderedHashMapTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Tests/Util/StringUtilTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/FormUtil.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/InheritDataAwareIterator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/OptionsResolverWrapper.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/OrderedHashMap.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/OrderedHashMapIterator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/ServerParams.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/Util/StringUtil.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/composer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/form/phpunit.xml.dist" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/Inflector.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/Tests/InflectorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/composer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/inflector/phpunit.xml.dist" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/CHANGELOG.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Debug/OptionsResolverIntrospector.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/AccessException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/ExceptionInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/InvalidArgumentException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/InvalidOptionsException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/MissingOptionsException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/NoConfigurationException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/NoSuchOptionException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/OptionDefinitionException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Exception/UndefinedOptionsException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Options.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/OptionsResolver.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Tests/Debug/OptionsResolverIntrospectorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Tests/OptionsResolverTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/composer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/phpunit.xml.dist" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/CHANGELOG.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/AccessException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/ExceptionInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/InvalidArgumentException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/InvalidPropertyPathException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/NoSuchIndexException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/NoSuchPropertyException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/OutOfBoundsException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/RuntimeException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Exception/UnexpectedTypeException.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccess.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessor.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessorBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyAccessorInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPath.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathBuilder.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathIterator.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/PropertyPathIteratorInterface.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/NonTraversableArrayObject.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClass.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassIsWritable.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassMagicCall.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassMagicGet.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TestClassSetValue.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/Ticket5775Object.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TraversableArrayObject.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/Fixtures/TypeHinted.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayAccessTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayObjectTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorArrayTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorBuilderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorCollectionTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorNonTraversableArrayObjectTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyAccessorTraversableArrayObjectTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyPathBuilderTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Tests/PropertyPathTest.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/composer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/phpunit.xml.dist" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/main/new.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/ocramius/package-versions/src/PackageVersions/Versions.php" afterPath="$PROJECT_DIR$/vendor/ocramius/package-versions/src/PackageVersions/Versions.php" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -546,13 +74,13 @@
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="2" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+            <state relative-caret-position="528">
+              <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#115#161#0#PHP" expanded="true" />
-                <element signature="e#534#556#0#PHP" expanded="true" />
-                <marker date="1513977502974" expanded="true" signature="481:500" ph="SELECT * FRO... users" />
+                <element signature="e#975#995#0#PHP" expanded="true" />
+                <marker date="1513980282264" expanded="true" signature="660:679" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -561,43 +89,35 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="115">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctrine.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="das://table:/556365a9/3ac56f6d-57ac-4e82-bc98-8979b1b5090c/postgres.public.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Twig Template" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/templates/main/new.html.twig" />
         <option value="$PROJECT_DIR$/public/scss/skin.scss" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -605,6 +125,7 @@
         <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/templates/main/new.html.twig" />
       </list>
     </option>
   </component>
@@ -804,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513896145180</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавили компоненту Symfony/Form">
+      <created>1513979121418</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513979121418</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12345000" />
+    <option name="totallyTimeSpent" value="14045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1054" extended-state="6" />
@@ -819,7 +347,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2349138" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5391924" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53800476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6935867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -879,9 +407,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Начальная стадия проекта T4 - стартовый шаблон приложения на фреймворке Symfony 4" />
     <MESSAGE value="Файл .env тоже будем хранить в git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Файл .env тоже будем хранить в git" />
+    <MESSAGE value="Добавили компоненту Symfony/Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавили компоненту Symfony/Form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -981,8 +512,8 @@
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#115#161#0#PHP" expanded="true" />
-            <element signature="e#534#556#0#PHP" expanded="true" />
-            <marker date="1513977502974" expanded="true" signature="481:500" ph="SELECT * FRO... users" />
+            <element signature="e#975#995#0#PHP" expanded="true" />
+            <marker date="1513980282264" expanded="true" signature="660:679" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1017,8 +548,8 @@
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#115#161#0#PHP" expanded="true" />
-            <element signature="e#534#556#0#PHP" expanded="true" />
-            <marker date="1513977502974" expanded="true" signature="481:500" ph="SELECT * FRO... users" />
+            <element signature="e#975#995#0#PHP" expanded="true" />
+            <marker date="1513980282264" expanded="true" signature="660:679" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1030,8 +561,8 @@
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#115#161#0#PHP" expanded="true" />
-            <element signature="e#534#556#0#PHP" expanded="true" />
-            <marker date="1513977502974" expanded="true" signature="481:500" ph="SELECT * FRO... users" />
+            <element signature="e#975#995#0#PHP" expanded="true" />
+            <marker date="1513980282264" expanded="true" signature="660:679" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1075,7 +606,6 @@
     <entry file="file://$PROJECT_DIR$/config/bundles.php" />
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml" />
     <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml" />
-    <entry file="file://$PROJECT_DIR$/templates/main/new.html.twig" />
     <entry file="file://$PROJECT_DIR$/public/index.php" />
     <entry file="file://$PROJECT_DIR$/public/.htaccess" />
     <entry file="file://$PROJECT_DIR$/public/css/skin.css">
@@ -1159,27 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="2" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#115#161#0#PHP" expanded="true" />
-            <element signature="e#534#556#0#PHP" expanded="true" />
-            <marker date="1513977502974" expanded="true" signature="481:500" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1192,6 +701,35 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#115#161#0#PHP" expanded="true" />
+            <element signature="e#975#995#0#PHP" expanded="true" />
+            <marker date="1513980282264" expanded="true" signature="660:679" ph="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>
