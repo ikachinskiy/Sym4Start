@@ -120,6 +120,7 @@ class PhpDumper extends Dumper
             'debug' => true,
             'hot_path_tag' => 'container.hot_path',
             'inline_class_loader_parameter' => 'container.dumper.inline_class_loader',
+            'build_time' => time(),
         ), $options);
 
         $this->namespace = $options['namespace'];
@@ -129,6 +130,11 @@ class PhpDumper extends Dumper
 
         if (0 !== strpos($baseClass = $options['base_class'], '\\') && 'Container' !== $baseClass) {
             $baseClass = sprintf('%s\%s', $options['namespace'] ? '\\'.$options['namespace'] : '', $baseClass);
+            $baseClassWithNamespace = $baseClass;
+        } elseif ('Container' === $baseClass) {
+            $baseClassWithNamespace = Container::class;
+        } else {
+            $baseClassWithNamespace = $baseClass;
         }
 
         $this->initializeMethodNamesMap('Container' === $baseClass ? Container::class : $baseClass);
@@ -170,7 +176,7 @@ class PhpDumper extends Dumper
         }
 
         $code =
-            $this->startClass($options['class'], $baseClass).
+            $this->startClass($options['class'], $baseClass, $baseClassWithNamespace).
             $this->addServices().
             $this->addDefaultParametersMethod().
             $this->endClass()
@@ -218,7 +224,7 @@ EOF;
             array_pop($code);
             $code["Container{$hash}/{$options['class']}.php"] = substr_replace($files[$options['class'].'.php'], "<?php\n\nnamespace Container{$hash};\n", 0, 6);
             $namespaceLine = $this->namespace ? "\nnamespace {$this->namespace};\n" : '';
-            $time = time();
+            $time = $options['build_time'];
             $id = hash('crc32', $hash.$time);
 
             $code[$options['class'].'.php'] = <<<EOF
@@ -399,6 +405,8 @@ EOTXT
             if (!$proxyDumper->isProxyCandidate($definition)) {
                 continue;
             }
+            // register class' reflector for resource tracking
+            $this->container->getReflectionClass($definition->getClass());
             $proxyCode = "\n".$proxyDumper->getProxyCode($definition);
             if ($strip) {
                 $proxyCode = "<?php\n".$proxyCode;
@@ -859,7 +867,7 @@ EOF;
         return $return.sprintf("new %s(%s);\n", $this->dumpLiteralClass($class), implode(', ', $arguments));
     }
 
-    private function startClass(string $class, string $baseClass): string
+    private function startClass(string $class, string $baseClass, string $baseClassWithNamespace): string
     {
         $namespaceLine = !$this->asFiles && $this->namespace ? "\nnamespace {$this->namespace};\n" : '';
 
@@ -908,6 +916,14 @@ EOF;
             $code = str_replace('$parameters', "\$buildParameters;\n    private \$parameters", $code);
             $code = str_replace('__construct()', '__construct(array $buildParameters = array())', $code);
             $code .= "        \$this->buildParameters = \$buildParameters;\n";
+        }
+
+        if (Container::class !== $baseClassWithNamespace) {
+            $r = $this->container->getReflectionClass($baseClassWithNamespace, false);
+
+            if (null !== $r && (null !== $constructor = $r->getConstructor()) && 0 === $constructor->getNumberOfRequiredParameters()) {
+                $code .= "        parent::__construct();\n\n";
+            }
         }
 
         if ($this->container->getParameterBag()->all()) {
@@ -970,10 +986,10 @@ EOF;
             }
             $code .= <<<EOF
 
-protected function createProxy(\$class, \Closure \$factory)
-{
-    {$proxyLoader}return \$factory();
-}
+    protected function createProxy(\$class, \Closure \$factory)
+    {
+        {$proxyLoader}return \$factory();
+    }
 
 EOF;
             break;
@@ -1096,16 +1112,16 @@ EOF;
             }
         }
 
-        $code = "\n";
+        $code = '';
 
         foreach ($lineage as $file) {
             if (!isset($this->inlinedRequires[$file])) {
                 $this->inlinedRequires[$file] = true;
-                $code .= sprintf("        include_once %s;\n", $file);
+                $code .= sprintf("\n            include_once %s;", $file);
             }
         }
 
-        return "\n" === $code ? '' : $code;
+        return $code ? sprintf("\n        \$this->privates['service_container'] = function () {%s\n        };\n", $code) : '';
     }
 
     private function addDefaultParametersMethod(): string
@@ -1183,9 +1199,9 @@ EOF;
     }
 
 EOF;
-            if (!$this->asFiles) {
-                $code = preg_replace('/^.*buildParameters.*\n.*\n.*\n/m', '', $code);
-            }
+        if (!$this->asFiles) {
+            $code = preg_replace('/^.*buildParameters.*\n.*\n.*\n/m', '', $code);
+        }
 
         if ($dynamicPhp) {
             $loadedDynamicParameters = $this->exportParameters(array_combine(array_keys($dynamicPhp), array_fill(0, count($dynamicPhp), false)), '', 8);
