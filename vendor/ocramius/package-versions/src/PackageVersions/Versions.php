@@ -10,6 +10,7 @@ namespace PackageVersions;
  */
 final class Versions
 {
+    const ROOT_PACKAGE_NAME = '__root__';
     const VERSIONS = array (
   'composer/ca-bundle' => '1.1.0@943b2c4fcad1ef178d16a713c2468bf7e579c288',
   'doctrine/annotations' => 'v1.6.0@c7f2050c68a9ab0bdb0f98567ec08d80ea7d24d5',
@@ -33,7 +34,7 @@ final class Versions
   'psr/cache' => '1.0.1@d11b50ad223250cf17b86e38383413f5a6764bf8',
   'psr/container' => '1.0.0@b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
   'psr/log' => '1.0.2@4ebe3a8bf773a19edfe0a84b6585ba3d401b724d',
-  'psr/simple-cache' => '1.0.0@753fa598e8f3b9966c886fe13f370baa45ef0e24',
+  'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'sensio/framework-extra-bundle' => 'v5.1.6@bf4940572e43af679aaa13be98f3446a1c237bd8',
   'sensiolabs/security-checker' => 'v4.1.8@dc270d5fec418cc6ac983671dba5d80ffaffb142',
   'symfony/apache-pack' => 'v1.0.1@3aa5818d73ad2551281fc58a75afd9ca82622e6c',
@@ -67,7 +68,7 @@ final class Versions
   'symfony/twig-bundle' => 'v4.0.5@fdaa069cd5cf3918b03d10a5e5819b064451ee4c',
   'symfony/yaml' => 'v4.0.5@de5f125ea39de846b90b313b2cfb031a0152d223',
   'twbs/bootstrap' => 'v4.0.0@8a628b943cf31ca0a002c08af661a95772480225',
-  'twig/twig' => 'v2.4.4@eddb97148ad779f27e670e1e3f19fb323aedafeb',
+  'twig/twig' => 'v2.4.6@d2117ec118c1ff3d28ccddca8212d82787a4809f',
   'zendframework/zend-code' => '3.3.0@6b1059db5b368db769e4392c6cb6cc139e56640d',
   'zendframework/zend-eventmanager' => '3.2.0@9d72db10ceb6e42fb92350c0cb54460da61bd79c',
   'symfony/dotenv' => 'v4.0.5@afb6923923e22874dac20bd042167ccb8df1d158',
@@ -76,7 +77,11 @@ final class Versions
   'symfony/stopwatch' => 'v4.0.5@6795ffa2f8eebedac77f045aa62c0c10b2763042',
   'symfony/var-dumper' => 'v4.0.5@c7d89044ed6ed3b7d8b558d509cca0666b947e58',
   'symfony/web-profiler-bundle' => 'v4.0.5@cd27b1813b0ce6b042b411cbb4e9d2aad6f07027',
-  '__root__' => 'dev-6b8dad62df2cd959040b941b7979c594eadbaa9c@6b8dad62df2cd959040b941b7979c594eadbaa9c',
+  'symfony/polyfill-iconv' => '*@77f39ca1c4f6acab5d0b69fddc94af13d9242145',
+  'symfony/polyfill-php71' => '*@77f39ca1c4f6acab5d0b69fddc94af13d9242145',
+  'symfony/polyfill-php70' => '*@77f39ca1c4f6acab5d0b69fddc94af13d9242145',
+  'symfony/polyfill-php56' => '*@77f39ca1c4f6acab5d0b69fddc94af13d9242145',
+  '__root__' => 'dev-master@77f39ca1c4f6acab5d0b69fddc94af13d9242145',
 );
 
     private function __construct()
@@ -88,12 +93,12 @@ final class Versions
      */
     public static function getVersion(string $packageName) : string
     {
-        if (! isset(self::VERSIONS[$packageName])) {
-            throw new \OutOfBoundsException(
-                'Required package "' . $packageName . '" is not installed: cannot detect its version'
-            );
+        if (isset(self::VERSIONS[$packageName])) {
+            return self::VERSIONS[$packageName];
         }
 
-        return self::VERSIONS[$packageName];
+        throw new \OutOfBoundsException(
+            'Required package "' . $packageName . '" is not installed: cannot detect its version'
+        );
     }
 }
