@@ -13,7 +13,7 @@ Run this command to install and enable this bundle in your application:
 
 .. code-block:: terminal
 
-    $ composer require maker --dev
+    $ composer require symfony/maker-bundle --dev
 
 Usage
 -----
@@ -41,6 +41,22 @@ optional arguments and options. Check them out with the ``--help`` option:
 
     $ php bin/console make:controller --help
 
+Configuration
+-------------
+
+This bundles doesn't require any configuration. But, you *can* configure
+the root namespace that is used to "guess" what classes you want to generate:
+
+.. code-block:: yaml
+
+    # config/packages/maker.yaml
+    # create this file if you need to configure anything
+    maker:
+        # tell MakerBundle that all of your classes lives in an
+        # Acme namespace, instead of the default App
+        # (e.g. Acme\Entity\Article, Acme\Command\MyCommand, etc)
+        root_namespace: 'Acme'
+
 Creating your Own Makers
 ------------------------
 
@@ -54,6 +70,17 @@ For examples of how to complete your new maker command, see the `core maker comm
 Make sure your class is registered as a service and tagged with ``maker.command``.
 If you're using the standard Symfony ``services.yaml`` configuration, this
 will be done automatically.
+
+Overriding the Generated Code
+-----------------------------
+
+Generated code can never be perfect for everyone. The MakerBundle tries to balance
+adding "extension points" with keeping the library simple so that existing commands
+can be improved and new commands can be added.
+
+For that reason, in general, the generated code cannot be modified. In many cases,
+adding your *own* maker command is so easy, that we recommend that. However, if there
+is some extension point that you'd like, please open an issue so we can discuss!
 
 .. _`SensioGeneratorBundle`: https://github.com/sensiolabs/SensioGeneratorBundle
 .. _`Symfony Flex`: https://symfony.com/doc/current/setup/flex.html

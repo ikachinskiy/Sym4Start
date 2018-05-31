@@ -14,7 +14,6 @@ namespace Symfony\Flex;
 use Composer\Composer;
 use Composer\Console\Application;
 use Composer\DependencyResolver\Operation\InstallOperation;
-use Composer\DependencyResolver\Operation\OperationInterface;
 use Composer\DependencyResolver\Operation\UpdateOperation;
 use Composer\DependencyResolver\Operation\UninstallOperation;
 use Composer\DependencyResolver\Pool;
@@ -31,6 +30,7 @@ use Composer\IO\IOInterface;
 use Composer\IO\NullIO;
 use Composer\Json\JsonFile;
 use Composer\Json\JsonManipulator;
+use Composer\Package\Locker;
 use Composer\Package\PackageInterface;
 use Composer\Plugin\PluginEvents;
 use Composer\Plugin\PluginInterface;
@@ -59,6 +59,8 @@ class Flex implements PluginInterface, EventSubscriberInterface
     private $cacheDirPopulated = false;
     private $displayThanksReminder = 0;
     private $rfs;
+    private $progress = true;
+    private $dryRun = false;
     private static $activated = true;
     private static $repoReadingCommands = [
         'create-project' => true,
@@ -73,6 +75,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
         'remove' => false,
         'unpack' => true,
     ];
+    private $shouldUpdateComposerLock = false;
 
     public function activate(Composer $composer, IOInterface $io)
     {
@@ -101,7 +104,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
         $this->configurator = new Configurator($composer, $io, $this->options);
         $this->downloader = new Downloader($composer, $io, $this->rfs);
         $this->downloader->setFlexId($this->getFlexId());
-        $this->lock = new Lock(str_replace(Factory::getComposerFile(), 'composer.json', 'symfony.lock'));
+        $this->lock = new Lock(getenv('SYMFONY_LOCKFILE') ?: str_replace('composer.json', 'symfony.lock', Factory::getComposerFile()));
 
         $populateRepoCacheDir = __CLASS__ === self::class;
         if ($composer->getPluginManager()) {
@@ -169,7 +172,16 @@ class Flex implements PluginInterface, EventSubscriberInterface
                 }
             }
 
-            if ($populateRepoCacheDir && isset(self::$repoReadingCommands[$command]) && ('install' !== $command || (file_exists('composer.json') && !file_exists('composer.lock')))) {
+            if ($input->hasOption('no-progress')) {
+                $this->progress = !$input->getOption('no-progress');
+            }
+
+            if ($input->hasOption('dry-run')) {
+                $this->dryRun = $input->getOption('dry-run');
+            }
+
+            $composerFile = Factory::getComposerFile();
+            if ($populateRepoCacheDir && isset(self::$repoReadingCommands[$command]) && ('install' !== $command || (file_exists($composerFile) && !file_exists(substr($composerFile, 0, -4).'lock')))) {
                 $this->populateRepoCacheDir();
             }
 
@@ -177,6 +189,8 @@ class Flex implements PluginInterface, EventSubscriberInterface
             $app->add(new Command\UpdateCommand($resolver));
             $app->add(new Command\RemoveCommand($resolver));
             $app->add(new Command\UnpackCommand($resolver));
+            $app->add(new Command\FixRecipesCommand($this));
+            $app->add(new Command\GenerateIdCommand($this));
 
             break;
         }
@@ -192,6 +206,8 @@ class Flex implements PluginInterface, EventSubscriberInterface
         // don't use $manipulator->removeProperty() for BC with Composer 1.0
         $contents = preg_replace('{^\s*+"(?:name|description)":.*,$\n}m', '', $manipulator->getContents());
         file_put_contents($json->getPath(), $contents);
+
+        $this->updateComposerLock();
     }
 
     public function record(PackageEvent $event)
@@ -225,8 +241,12 @@ class Flex implements PluginInterface, EventSubscriberInterface
         $this->update($event);
     }
 
-    public function update(Event $event)
+    public function update(Event $event, $operations = [])
     {
+        if ($operations) {
+            $this->operations = $operations;
+        }
+
         if (!file_exists(getcwd().'/.env') && file_exists(getcwd().'/.env.dist')) {
             copy(getcwd().'/.env.dist', getcwd().'/.env');
         }
@@ -301,6 +321,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
                     $manipulator = new JsonManipulator(file_get_contents($json->getPath()));
                     $manipulator->addSubNode('extra', 'symfony.allow-contrib', true);
                     file_put_contents($json->getPath(), $manipulator->getContents());
+                    $this->shouldUpdateComposerLock = true;
                 }
             }
 
@@ -335,6 +356,10 @@ class Flex implements PluginInterface, EventSubscriberInterface
         }
 
         $this->lock->write();
+
+        if ($this->shouldUpdateComposerLock) {
+            $this->updateComposerLock();
+        }
     }
 
     public function enableThanksReminder()
@@ -414,7 +439,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
 
     public function populateFilesCacheDir(InstallerEvent $event)
     {
-        if ($this->cacheDirPopulated) {
+        if ($this->cacheDirPopulated || $this->dryRun) {
             return;
         }
         $this->cacheDirPopulated = true;
@@ -465,7 +490,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
         }
 
         if (1 < count($downloads)) {
-            $this->rfs->download($downloads, [$this->rfs, 'get'], false);
+            $this->rfs->download($downloads, [$this->rfs, 'get'], false, $this->progress);
         }
     }
 
@@ -474,6 +499,20 @@ class Flex implements PluginInterface, EventSubscriberInterface
         if ($event->getRemoteFilesystem() !== $this->rfs) {
             $event->setRemoteFilesystem($this->rfs->setNextOptions($event->getRemoteFilesystem()->getOptions()));
         }
+    }
+
+    public function generateFlexId()
+    {
+        if ($this->getFlexId()) {
+            return;
+        }
+
+        $json = new JsonFile(Factory::getComposerFile());
+        $manipulator = new JsonManipulator(file_get_contents($json->getPath()));
+        $manipulator->addSubNode('extra', 'symfony.id', $this->downloader->get('/ulid')->getBody()['ulid']);
+        file_put_contents($json->getPath(), $manipulator->getContents());
+
+        $this->updateComposerLock();
     }
 
     private function fetchRecipes(): array
@@ -544,26 +583,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
     {
         $extra = $this->composer->getPackage()->getExtra();
 
-        // don't want to be registered
-        if (getenv('SYMFONY_SKIP_REGISTRATION') || !isset($extra['symfony']['id'])) {
-            return null;
-        }
-
-        // already registered
-        if ($extra['symfony']['id']) {
-            return $extra['symfony']['id'];
-        }
-
-        // get a new ID
-        $id = $this->downloader->get('/ulid')->getBody()['ulid'];
-
-        // update composer.json
-        $json = new JsonFile(Factory::getComposerFile());
-        $manipulator = new JsonManipulator(file_get_contents($json->getPath()));
-        $manipulator->addSubNode('extra', 'symfony.id', $id);
-        file_put_contents($json->getPath(), $manipulator->getContents());
-
-        return $id;
+        return $extra['symfony']['id'] ?? null;
     }
 
     private function formatOrigin(string $origin): string
@@ -629,6 +649,17 @@ class Flex implements PluginInterface, EventSubscriberInterface
             ParallelDownloader::$cacheNext = true;
             $repo->getProviderNames();
         });
+    }
+
+    private function updateComposerLock()
+    {
+        $lock = substr(Factory::getComposerFile(), 0, -4).'lock';
+        $composerJson = file_get_contents(Factory::getComposerFile());
+        $lockFile = new JsonFile($lock, null, $this->io);
+        $locker = new Locker($this->io, $lockFile, $this->composer->getRepositoryManager(), $this->composer->getInstallationManager(), $composerJson);
+        $lockData = $locker->getLockData();
+        $lockData['content-hash'] = Locker::getContentHash($composerJson);
+        $lockFile->write($lockData);
     }
 
     public static function getSubscribedEvents(): array

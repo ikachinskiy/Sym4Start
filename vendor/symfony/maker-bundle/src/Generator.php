@@ -21,13 +21,15 @@ use Symfony\Bundle\MakerBundle\Util\ClassNameDetails;
 class Generator
 {
     private $fileManager;
+    private $twigHelper;
     private $pendingOperations = [];
     private $namespacePrefix;
 
-    public function __construct(FileManager $fileManager, $namespacePrefix)
+    public function __construct(FileManager $fileManager, string $namespacePrefix)
     {
         $this->fileManager = $fileManager;
-        $this->namespacePrefix = rtrim($namespacePrefix, '\\');
+        $this->twigHelper = new GeneratorTwigHelper($fileManager);
+        $this->namespacePrefix = trim($namespacePrefix, '\\');
     }
 
     /**
@@ -35,10 +37,10 @@ class Generator
      */
     public function generateClass(string $className, string $templateName, array $variables): string
     {
-        $targetPath = $this->fileManager->getPathForFutureClass($className);
+        $targetPath = $this->fileManager->getRelativePathForFutureClass($className);
 
         if (null === $targetPath) {
-            throw new \LogicException(sprintf('Could not determine where to locate the new class "%s".', $className));
+            throw new \LogicException(sprintf('Could not determine where to locate the new class "%s", maybe try with a full namespace like "\\My\\Full\\Namespace\\%s"', $className, Str::getShortClassName($className)));
         }
 
         $variables = array_merge($variables, [
@@ -60,6 +62,10 @@ class Generator
      */
     public function generateFile(string $targetPath, string $templateName, array $variables)
     {
+        $variables = array_merge($variables, [
+            'helper' => $this->twigHelper,
+        ]);
+
         $this->addOperation($targetPath, $templateName, $variables);
     }
 
@@ -163,5 +169,10 @@ class Generator
         }
 
         $this->pendingOperations = [];
+    }
+
+    public function getRootNamespace(): string
+    {
+        return $this->namespacePrefix;
     }
 }

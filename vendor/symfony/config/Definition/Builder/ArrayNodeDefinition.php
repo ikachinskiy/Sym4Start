@@ -48,7 +48,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     }
 
     /**
-     * Sets a custom children builder.
+     * {@inheritdoc}
      */
     public function setBuilder(NodeBuilder $builder)
     {
@@ -56,9 +56,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     }
 
     /**
-     * Returns a builder to add children nodes.
-     *
-     * @return NodeBuilder
+     * {@inheritdoc}
      */
     public function children()
     {
@@ -366,17 +364,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     }
 
     /**
-     * Appends a node definition.
-     *
-     *     $node = new ArrayNodeDefinition()
-     *         ->children()
-     *             ->scalarNode('foo')->end()
-     *             ->scalarNode('baz')->end()
-     *         ->end()
-     *         ->append($this->getBarNodeDefinition())
-     *     ;
-     *
-     * @return $this
+     * {@inheritdoc}
      */
     public function append(NodeDefinition $node)
     {
@@ -405,7 +393,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     protected function createNode()
     {
         if (null === $this->prototype) {
-            $node = new ArrayNode($this->name, $this->parent);
+            $node = new ArrayNode($this->name, $this->parent, $this->pathSeparator);
 
             $this->validateConcreteNode($node);
 
@@ -416,7 +404,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
                 $node->addChild($child->getNode());
             }
         } else {
-            $node = new PrototypedArrayNode($this->name, $this->parent);
+            $node = new PrototypedArrayNode($this->name, $this->parent, $this->pathSeparator);
 
             $this->validatePrototypeNode($node);
 
@@ -542,5 +530,13 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
                 );
             }
         }
+    }
+
+    /**
+     * @return NodeDefinition[]
+     */
+    public function getChildNodeDefinitions()
+    {
+        return $this->children;
     }
 }

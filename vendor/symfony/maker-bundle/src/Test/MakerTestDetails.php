@@ -22,6 +22,8 @@ final class MakerTestDetails
 
     private $fixtureFilesPath;
 
+    private $deletedFiles = [];
+
     private $replacements = [];
 
     private $preMakeCommands = [];
@@ -31,6 +33,14 @@ final class MakerTestDetails
     private $assert;
 
     private $extraDependencies = [];
+
+    private $argumentsString = '';
+
+    private $commandAllowedToFail = false;
+
+    private $snapshotSuffix = '';
+
+    private $requiredPhpVersion;
 
     /**
      * @param MakerInterface $maker
@@ -56,6 +66,46 @@ final class MakerTestDetails
         return $this;
     }
 
+    public function changeRootNamespace(string $rootNamespace): self
+    {
+        $rootNamespace = trim($rootNamespace, '\\');
+
+        // to bypass read before flush issue
+        $this->snapshotSuffix = $rootNamespace;
+
+        return $this
+            ->addReplacement(
+                'composer.json',
+                '"App\\\\": "src/"',
+                '"'.$rootNamespace.'\\\\": "src/"'
+            )
+            ->addReplacement(
+                'src/Kernel.php',
+                'namespace App',
+                'namespace '.$rootNamespace
+            )
+            ->addReplacement(
+                'bin/console',
+                'use App\\Kernel',
+                'use '.$rootNamespace.'\\Kernel'
+            )
+            ->addReplacement(
+                'public/index.php',
+                'use App\\Kernel',
+                'use '.$rootNamespace.'\\Kernel'
+            )
+            ->addReplacement(
+                'config/services.yaml',
+                'App\\',
+                $rootNamespace.'\\'
+            )
+            ->addReplacement(
+                'phpunit.xml.dist',
+                '<env name="KERNEL_CLASS" value="App\\Kernel" />',
+                '<env name="KERNEL_CLASS" value="'.$rootNamespace.'\\Kernel" />'
+            );
+    }
+
     public function addPreMakeCommand(string $preMakeCommand): self
     {
         $this->preMakeCommands[] = $preMakeCommand;
@@ -70,6 +120,18 @@ final class MakerTestDetails
         return $this;
     }
 
+    public function deleteFile(string $filename): self
+    {
+        $this->deletedFiles[] = $filename;
+
+        return $this;
+    }
+
+    public function getFilesToDelete(): array
+    {
+        return $this->deletedFiles;
+    }
+
     public function addReplacement(string $filename, string $find, string $replace): self
     {
         $this->replacements[] = [
@@ -77,6 +139,46 @@ final class MakerTestDetails
             'find' => $find,
             'replace' => $replace,
         ];
+
+        return $this;
+    }
+
+    public function configureDatabase(bool $createSchema = true): self
+    {
+        // currently, we need to replace this in *both* files so we can also
+        // run bin/console commands
+        $this
+            ->addReplacement(
+                'phpunit.xml.dist',
+                'mysql://db_user:db_password@127.0.0.1:3306/db_name',
+                getenv('TEST_DATABASE_DSN')
+            )
+            ->addReplacement(
+                '.env',
+                'mysql://db_user:db_password@127.0.0.1:3306/db_name',
+                getenv('TEST_DATABASE_DSN')
+            )
+        ;
+
+        // this looks silly, but it's the only way to drop the database *for sure*,
+        // as doctrine:database:drop will error if there is no database
+        // also, skip for SQLITE, as it does not support --if-not-exists
+        if (0 !== strpos(getenv('TEST_DATABASE_DSN'), 'sqlite://')) {
+            $this->addPreMakeCommand('php bin/console doctrine:database:create --env=test --if-not-exists');
+        }
+        $this->addPreMakeCommand('php bin/console doctrine:database:drop --env=test --force');
+
+        $this->addPreMakeCommand('php bin/console doctrine:database:create --env=test');
+        if ($createSchema) {
+            $this->addPreMakeCommand('php bin/console doctrine:schema:create --env=test');
+        }
+
+        return $this;
+    }
+
+    public function updateSchemaAfterCommand(): self
+    {
+        $this->addPostMakeCommand('php bin/console doctrine:schema:update --env=test --force');
 
         return $this;
     }
@@ -107,6 +209,27 @@ final class MakerTestDetails
         return $this;
     }
 
+    public function setArgumentsString(string $argumentsString): self
+    {
+        $this->argumentsString = $argumentsString;
+
+        return $this;
+    }
+
+    public function setCommandAllowedToFail(bool $commandAllowedToFail): self
+    {
+        $this->commandAllowedToFail = $commandAllowedToFail;
+
+        return $this;
+    }
+
+    public function setRequiredPhpVersion(int $version): self
+    {
+        $this->requiredPhpVersion = $version;
+
+        return $this;
+    }
+
     public function getInputs(): array
     {
         return $this->inputs;
@@ -119,9 +242,9 @@ final class MakerTestDetails
 
     public function getUniqueCacheDirectoryName(): string
     {
-        // create a unique directory name for this project
-        // but one that will be the same each time the tests are run
-        return (new \ReflectionObject($this->maker))->getShortName().'_'.($this->fixtureFilesPath ? basename($this->fixtureFilesPath) : 'default').'_'.md5(serialize($this->extraDependencies));
+        // for cache purposes, only the dependencies are important
+        // shortened to avoid long paths on Windows
+        return 'maker_'.substr(md5(serialize($this->getDependencies()).$this->snapshotSuffix), 0, 10);
     }
 
     public function getPreMakeCommands(): array
@@ -162,5 +285,20 @@ final class MakerTestDetails
             $depBuilder->getAllRequiredDevDependencies(),
             $this->extraDependencies
         );
+    }
+
+    public function getArgumentsString(): string
+    {
+        return $this->argumentsString;
+    }
+
+    public function isCommandAllowedToFail(): bool
+    {
+        return $this->commandAllowedToFail;
+    }
+
+    public function isSupportedByCurrentPhpVersion(): bool
+    {
+        return null === $this->requiredPhpVersion || \PHP_VERSION_ID >= $this->requiredPhpVersion;
     }
 }
